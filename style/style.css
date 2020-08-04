@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: calibre, sans-serif;
+}
+
+div#abas {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+div#abas nav a {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    border: 2px solid;
+    border-bottom: 1px solid;
+    text-decoration: none;
+    padding: 5px 10px;
+    color: black;
+    border-radius: 5px 5px 0 0;
+    margin-right: 10px;
+    top: 1px;
+    background-color: rgb(170, 155, 155);
+}
+
+div#abas nav a.active {
+    border: 1px solid;
+    border-bottom: none;
+    padding: 5px 10px 6px;
+    margin-bottom: -1px;
+    background: white;
+}
+
+div#abas>div {
+    
+    border: 1px solid;
+    padding: 20px;
+}

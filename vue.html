@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style/style.css">
+    <title>Abas</title>
+
+</head>
+
+<body>
+    <div id="abas">
+        <nav>
+            <a :href="'#aba'+id" :class="aba==id?'active':''"
+             v-for="item, id in Abas">{{item.nome}}</a>
+          
+        </nav>
+
+        <div>
+            <h1>{{Abas[aba].titulo}}</h1>
+            <article v-html="Abas[aba].texto">
+            </article>
+
+        </div>
+        
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var abas = new Vue({
+            el: "#abas",
+            data: {
+                Abas:[
+                    {
+                    nome: 'aba 1',
+                    titulo: "Aqui esta o conteudo da aba 1",
+                    texto: '<p> Aqui vai o texto da aba 1</p><p> Aqui vai o texto da aba 1</p><p> Aqui vai o texto da aba 1</p>',
+                }, 
+                {
+                    nome: "aba 2",
+                    titulo: "Logo aqui ira conter o conteudo da aba 2",
+                    texto: '<p>Aqui vai o texta da aba 2</p><p>Aqui vai o texta da aba 2</p><p>Aqui vai o texta da aba 2</p>',
+                }, 
+                {
+                    nome: " aba 3",
+                    titulo: " Por fim o conteudo da aba 3",
+                    texto: "<p>Aqui vai o texto da aba 3</p><p>Aqui vai o texto da aba 3</p><p>Aqui vai o texto da aba 3</p>",
+                },],
+
+                aba: 0,
+            },
+
+            methods:{
+             setAba(){
+               this.aba=parseFloat('0'+location.hash.replace(/#aba/,''))
+             }
+
+
+            },
+            mounted(){
+                window.addEventListener('hashchange',()=>{
+                    this.setAba()
+                })
+                this.setAba()
+            }
+        });
+    </script>
+</body>
+
+</html>
